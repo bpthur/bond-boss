@@ -1,0 +1,81 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Bond Boss API",
+      "description": ""
+    },
+    "host": "localhost:3000",
+    "basePath": "/api/v1",
+    "tags": [
+      {
+        "name": "Health",
+        "description": "API Health"
+      },
+      {
+        "name": "Version",
+        "description": "API Version"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/health": {
+        "get": {
+          "tags": [
+            "Health"
+          ],
+          "summary": "Returns the health of this service",
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/Health"
+              }
+            }
+          }
+        }
+      },
+      "/version": {
+        "get": {
+          "tags": [
+            "Version"
+          ],
+          "summary": "Returns the version of this service",
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/Version"
+              }
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "Health": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "uniqueItems": true
+          }
+        }
+      },
+      "Version": {
+        "properties": {
+          "version": {
+            "type": "string",
+            "uniqueItems": true
+          }
+        }
+      }
+    }
+  }
