@@ -4,7 +4,7 @@ FROM node:alpine
 WORKDIR /app
 
 # Install dependencies
-COPY package*.json ./
+COPY src /app
 RUN npm install
 
 # Bundle app
